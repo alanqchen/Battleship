@@ -40,14 +40,15 @@ public class SettingsFrame extends JFrame implements MouseListener {
 		getContentPane().setLayout(null);
 		setLocationRelativeTo(null);
 		//Make the frame border-less
-	    setUndecorated(true);
+	    	setUndecorated(true);
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation(dim.width/2-getSize().width/2, dim.height/2-getSize().height/2);
-	    setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+	    	setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		
 		easyButton.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
 
 		// alter buttons
+		easyButton.setBorderPainted(false); // Java 8 MacOS fix
 		easyButton.setBounds(250, 213, 200, 75);
 		easyButton.addMouseListener(this);
 		easyButton.setEnabled(true);
@@ -56,6 +57,7 @@ public class SettingsFrame extends JFrame implements MouseListener {
 		easyButton.setOpaque(true);
 		easyButton.setIcon(new ImageIcon(MainMenuFrame.class.getResource("/images/easyIcon.png")));
 		
+		mediumButton.setBorderPainted(false); // Java 8 MacOS fix
 		mediumButton.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
 		mediumButton.setBounds(250, 288, 200, 75);
 		mediumButton.addMouseListener(this);
@@ -65,6 +67,7 @@ public class SettingsFrame extends JFrame implements MouseListener {
 		mediumButton.setOpaque(true);
 		mediumButton.setIcon(new ImageIcon(MainMenuFrame.class.getResource("/images/mediumIcon.png")));
 		
+		hardButton.setBorderPainted(false); // Java 8 MacOS fix
 		hardButton.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
 		hardButton.setBounds(250, 363, 200, 75);
 		hardButton.addMouseListener(this);
@@ -73,6 +76,7 @@ public class SettingsFrame extends JFrame implements MouseListener {
 		hardButton.setOpaque(true);
 		hardButton.setIcon(new ImageIcon(MainMenuFrame.class.getResource("/images/hardIcon.png")));
 		
+		backButton.setBorderPainted(false); // Java 8 MacOS fix
 		backButton.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		backButton.setToolTipText("Back");
 		backButton.setBounds(325, 575, 50, 50);
@@ -81,7 +85,6 @@ public class SettingsFrame extends JFrame implements MouseListener {
 		backButton.setFocusable(false);
 		backButton.setOpaque(false);
 		backButton.setContentAreaFilled(false);
-		backButton.setBorderPainted(true);
 		backButton.setIcon(new ImageIcon(MainMenuFrame.class.getResource("/images/quitIcon.png")));
 		getContentPane().add(backButton);
 
