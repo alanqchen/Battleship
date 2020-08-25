@@ -27,13 +27,14 @@ public class HelpFrame implements MouseListener { // instruction frame
 		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setBackground(Color.BLACK);
 		/* Make the frame border-less */
-	    frame.setUndecorated(true);
+	    	frame.setUndecorated(true);
 		/* Set Position to middle of screen */
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		frame.setLocation(dim.width/2-frame.getSize().width/2, dim.height/2-frame.getSize().height/2);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		// alter backButton button, resize and position
+		backButton.setBorderPainted(false); // Java 8 MacOS fix
 		backButton.setToolTipText("Back");
 		backButton.setBounds(325, 575, 50, 50);
 		backButton.addMouseListener(this);
@@ -41,7 +42,6 @@ public class HelpFrame implements MouseListener { // instruction frame
 		backButton.setFocusable(false);
 		backButton.setOpaque(false);
 		backButton.setContentAreaFilled(false);
-		backButton.setBorderPainted(true);
 		backButton.setIcon(new ImageIcon(MainMenuFrame.class.getResource("/images/quitIcon.png")));
 		frame.getContentPane().add(backButton);
 		
