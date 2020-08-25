@@ -31,8 +31,8 @@ public class MainMenuFrame implements MouseListener {
 		mainmenu.setSize(width, height); //default 600,500
 		//mainmenu.setLocationRelativeTo(null);
 		/* Make the frame border-less */
-	    mainmenu.setUndecorated(true);
-	    mainmenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    	mainmenu.setUndecorated(true);
+	    	mainmenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		/* Set Position to middle of screen */
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		mainmenu.setLocation(dim.width/2-mainmenu.getSize().width/2, dim.height/2-mainmenu.getSize().height/2);
@@ -40,6 +40,8 @@ public class MainMenuFrame implements MouseListener {
 		buttons.setLayout(null);
 
 		// alter launchButton button, resize and position
+		launchButton.setBorderPainted(false); // Java 8 MacOS fix
+		launchButton.setOpaque(true); // Java 8 MacOS fix
 		launchButton.setFont(new Font("Impact", Font.PLAIN, 18));
 		launchButton.setBounds(425, 313, 150, 75);
 		launchButton.addMouseListener(this);
@@ -49,6 +51,7 @@ public class MainMenuFrame implements MouseListener {
 		launchButton.setBackground(new Color(234,89,11));
 		
 		// alter instr button, resize and position
+		helpButton.setBorderPainted(false); // Java 8 MacOS fix
 		helpButton.setToolTipText("Help");
 		helpButton.setBounds(475, 625, 50, 50);
 		helpButton.addMouseListener(this);
@@ -56,10 +59,10 @@ public class MainMenuFrame implements MouseListener {
 		helpButton.setFocusable(false);
 		helpButton.setOpaque(false);
 		helpButton.setContentAreaFilled(false);
-		helpButton.setBorderPainted(true);
 		helpButton.setIcon(new ImageIcon(MainMenuFrame.class.getResource("/images/helpIcon.png")));
 		
 		// alter quitButton button, resize and position
+		quitButton.setBorderPainted(false); // Java 8 MacOS fix
 		quitButton.setToolTipText("Quit");
 		quitButton.setBounds(425, 625, 50, 50);
 		quitButton.addMouseListener(this);
@@ -67,9 +70,9 @@ public class MainMenuFrame implements MouseListener {
 		quitButton.setFocusable(false);
 		quitButton.setOpaque(false);
 		quitButton.setContentAreaFilled(false);
-		quitButton.setBorderPainted(true);
 		quitButton.setIcon(new ImageIcon(MainMenuFrame.class.getResource("/images/quitIcon.png")));
 		
+		settingsButton.setBorderPainted(false); // Java 8 MacOS fix
 		settingsButton.setToolTipText("Settings");
 		settingsButton.setBounds(525,625,50,50);
 		settingsButton.addMouseListener(this);
@@ -77,7 +80,6 @@ public class MainMenuFrame implements MouseListener {
 		settingsButton.setFocusable(false);
 		settingsButton.setOpaque(false);
 		settingsButton.setContentAreaFilled(false);
-		settingsButton.setBorderPainted(true);
 		settingsButton.setIcon(new ImageIcon(MainMenuFrame.class.getResource("/images/settingsIcon.png")));
 
 		//add buttons to JPanel
