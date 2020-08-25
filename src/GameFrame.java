@@ -100,6 +100,7 @@ public class GameFrame implements MouseListener { // main class
 		confirmButton.setEnabled(false);
 		confirmButton.setIcon(new ImageIcon(MainMenuFrame.class.getResource("/images/confirmIcon.png")));
 		/* Reset Button */
+		resetButton.setBorderPainted(false); // Java 8 MacOS fix
 		resetButton.setToolTipText("Reset");
 		resetButton.addMouseListener(this);
 		resetButton.setEnabled(true);
@@ -107,6 +108,7 @@ public class GameFrame implements MouseListener { // main class
 		resetButton.setFocusable(false);
 		resetButton.setIcon(new ImageIcon(MainMenuFrame.class.getResource("/images/resetIcon.png")));
 		/* Quit Button */
+		quitButton.setBorderPainted(false); // Java 8 MacOS fix
 		quitButton.setToolTipText("Quit");
 		quitButton.addMouseListener(this);
 		quitButton.setEnabled(true);
@@ -396,12 +398,12 @@ public class GameFrame implements MouseListener { // main class
 		buttonBox.setLocation(0,1000);
 		
 		//move quit button and add icon
+		quitButton.setBorderPainted(false); // Java 8 MacOS fix
 		quitButton.setIcon(new ImageIcon(MainMenuFrame.class.getResource("/images/quitIcon.png")));
 		quitButton.setSize(50, 50);
 		quitButton.setLocation(500,600);
 		quitButton.setOpaque(false);
 		quitButton.setContentAreaFilled(false);
-		quitButton.setBorderPainted(true);
 		// updates labels
 		infoLabel.setBounds(310, 500, 425, 22);
 		infoLabel.setFont(new Font("Impact", Font.PLAIN, 18));
